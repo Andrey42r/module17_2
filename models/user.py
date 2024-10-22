@@ -3,6 +3,7 @@ from app.backand.db import Base
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 
+
 router = APIRouter(prefix="/user", tags=["user"])
 
 
@@ -41,7 +42,7 @@ class User(Base):
     age = Column(String)
     slug = Column(String, unique=True, index=True)
 
-    tasks = relationship("Task", back_populates='task')
+    tasks = relationship("Task", back_populates='tasks')
 
 
 from sqlalchemy.schema import CreateTable
